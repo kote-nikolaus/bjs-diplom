@@ -68,9 +68,9 @@ function sendMoneyRequest(data) {
 function checkMoney(response) {
   if (response.success) {
     ProfileWidget.showProfile(response.data);
-    moneyManager.setMessage(true, 'Успешно!');
+    moneyManager.setMessage(false, 'Успешно!');
   } else {
-    moneyManager.setMessage(false, response.data);
+    moneyManager.setMessage(true, response.data);
   }
 }
 
@@ -99,9 +99,9 @@ function checkFriend(response) {
     favoritesWidget.clearTable();
     favoritesWidget.fillTable(response.data);
     moneyManager.updateUsersList(response.data);
-    favoritesWidget.setMessage(true, 'Успешно!');
+    favoritesWidget.setMessage(false, 'Успешно!');
   } else {
-    favoritesWidget.setMessage(false, response.data);
+    favoritesWidget.setMessage(true, response.data);
   }
 }
 
